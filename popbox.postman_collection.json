@@ -1,0 +1,533 @@
+{
+	"info": {
+		"name": "popbox",
+		"_postman_id": "ebcd1767-8260-f154-4028-c46b1acc845a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"021021021\",\n\t\"password\": \"admin@admin.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"adiputra\",\n\t\"email\": \"admin@admin.com\",\n\t\"password\": \"admin@admin.com\",\n\t\"password_confirmation\": \"admin@admin.com\",\n\t\"phone\": \"021021021\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demography",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Countries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8000/api/country",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"country"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Province",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8000/api/province",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"province"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get All City By Province",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"province_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/city/by",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"city",
+								"by"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8000/api/city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"city"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Province By Country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"country_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/province/bycountry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"province",
+								"bycountry"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locker",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Lockers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8000/api/locker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"locker"
+							]
+						},
+						"description": "Get all lockers without paginations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Lockers By City",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"city_id\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/locker/bycity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"locker",
+								"bycity"
+							]
+						},
+						"description": "Get all lockers by city"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Lockers By Position",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"city_id\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/locker/byposition",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"locker",
+								"byposition"
+							]
+						},
+						"description": "Get lockers by position current of user devices"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Building Types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8000/api/buildingtype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"buildingtype"
+							]
+						},
+						"description": "Get all building types of locker locations"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"description": "",
+			"item": [
+				{
+					"name": "Order Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"delivery_type\": \"PLA\",\n\t\"origin_id\": \"2\",\n\t\"origin_name\": \"Test Origin Name\",\n\t\"origin_address\": \"Test Origin Address\",\n\t\"destination_id\": \"4\",\n\t\"destination\": \"Test destination name\",\n\t\"notes\": \"ini notes\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/order/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"save"
+							]
+						},
+						"description": "Save data order with parameters"
+					},
+					"response": []
+				},
+				{
+					"name": "Order Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"order_id\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/order/detail",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"detail"
+							]
+						},
+						"description": "Get detail order by order_id"
+					},
+					"response": []
+				},
+				{
+					"name": "Order History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aC9yZWdpc3RlciIsImlhdCI6MTUyMTk0MDA4NCwiZXhwIjoxNTIxOTc2MDg0LCJuYmYiOjE1MjE5NDAwODQsImp0aSI6Imo4VndPbW1LR0VDemJZeE4ifQ.OfsLD14XdfWq6yGtTRKHxFtfEqnviTIEsmpcn8wuPXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/api/order/history",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"history"
+							]
+						},
+						"description": "Endpoint to get history order by user token"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
